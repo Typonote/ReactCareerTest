@@ -33,6 +33,7 @@ const QuestionCard= ({ qitemNo, question, answer01, answer02, answer03, answer04
         <div className="question-card"> 
             <h3># {qitemNo}</h3>
             <h5>{question}</h5>
+                {/* 0821 질문 1) */}
                 <div className="option-container">
                     <input type="radio" value={answerScore01} name={`Question-${qitemNo}`} checked={answers[qitemNo] === answerScore01 ? true : false} onChange={handleChange} /> <label>{answer01}</label>
                     <input type="radio" value={answerScore02} name={`Question-${qitemNo}`} checked={answers[qitemNo] === answerScore02 ? true : false} onChange={handleChange} /> <label>{answer02}</label>
