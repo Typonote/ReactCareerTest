@@ -12,6 +12,7 @@ const QuestionCard = ({
   answerScore01,
   answerScore02,
 }) => {
+
   const dispatch = useDispatch();
   const answers = useSelector((state) => state.answers);
 

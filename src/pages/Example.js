@@ -15,7 +15,7 @@ const Example = () => {
   // 0821 질문 2)
   const Failalert = () => {
     if (answer === "None") {
-      return toast("체크하지 않은 문항이 있는지 확인해주세요.", {
+      return toast("다시 한 번 문항을 확인하세요", {
         className: "custom-toast",
         draggable: true,
         position: toast.POSITION.BOTTOM_CENTER,
@@ -76,3 +76,5 @@ const Example = () => {
 };
 
 export default Example;
+
+// YOUTUBE: HOW TO SETUP AND USE REACT-TOASTIFY

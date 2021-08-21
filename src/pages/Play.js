@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import MyProgressBar from '../components/MyProgressBar';
 import QuestionCard from '../components/QuestionCard';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Play = ({ page }) => {
+
+    const history = useHistory();
 
     // redux에 저장된 값 읽어오기
     const questions = useSelector((state) => state.question);
@@ -55,7 +59,7 @@ const Play = ({ page }) => {
             // page: 5 => noneCheked(21,26) => => answer를 21부터 25까지 check
             
             // true값이 나오면 (none값이 있는 경우)
-
+            
             setDisabled(true);  // disabled
         } else {
             // none값이 없는 경우
@@ -74,7 +78,6 @@ const Play = ({ page }) => {
     useEffect(() => {
         setDisabled(noneChecked(5 * (Number(page) - 1) + 1, 5 * Number(page) + 1));
     }, [answers]);
-
 
     return (
         <div>
