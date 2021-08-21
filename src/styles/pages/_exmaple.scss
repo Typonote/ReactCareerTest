@@ -27,7 +27,6 @@
         font-size: 1.5rem;
         text-align: center;
     }
-
 }
 
 .button-container{
@@ -67,7 +66,7 @@
         box-shadow: 0 0 8px 0 #ea4355;
     }
 
-    a.page-button-start button:enabled{
+    .page-button-start {
         background-color: #1da1f2;
         font-family: 'Black Han Sans', sans-serif;
         font-size: 2rem;
@@ -83,27 +82,27 @@
         transition: 0.3s linear all;
     }
 
-    a.page-button-start button:enabled:hover{
+    .page-button-start:hover {
         background-color: darken($color: #1da1f2, $amount: 10%);
         border: 3px solid darken($color: #1da1f2, $amount: 10%);
         box-shadow: 0 0 8px 0 #1da1f2;
     }
 
-    a.page-button-start button:disabled{
-        background-color: #EAEAEA;
-        font-family: 'Black Han Sans', sans-serif;
-        font-size: 2rem;
-        color: #4C4C4C;
-        cursor: pointer;
-        padding: 1rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        display: block;
-        border: 3px solid #EAEAEA;
-        border-radius: 20px;
-        text-align: center;
-        transition: 0.3s linear all;
-    }
+    // .page-button-start {
+    //     background-color: #EAEAEA;
+    //     font-family: 'Black Han Sans', sans-serif;
+    //     font-size: 2rem;
+    //     color: #4C4C4C;
+    //     cursor: pointer;
+    //     padding: 1rem;
+    //     padding-left: 2rem;
+    //     padding-right: 2rem;
+    //     display: block;
+    //     border: 3px solid #EAEAEA;
+    //     border-radius: 20px;
+    //     text-align: center;
+    //     transition: 0.3s linear all;
+    // }
 
     a.page-button-start button:disabled:hover{
         background-color: #EAEAEA;
