@@ -12,6 +12,7 @@ const Example = () => {
     const sample = useSelector((state) => state.question[0]);
     const answer = useSelector((state) => state.answers[0]);
 
+    // 0821 질문 2)
     const Failalert = () => {
         toast("체크하지 않은 문항이 있는지 확인해주세요.", {
             className: "custom-toast",
@@ -45,6 +46,7 @@ const Example = () => {
                         answerScore02={sample.answerScore02}
                     />
             </div>
+            {/* 0821 질문 2) */}
             <div className="button-container">
                     <Link className="page-button-home" to="/" >
                         <button>
