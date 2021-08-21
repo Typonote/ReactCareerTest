@@ -32,7 +32,6 @@
 
 }
 
-
 // 0821 질문 1)
 .option-container{
     width: 100%;
@@ -40,8 +39,6 @@
     justify-content: space-around;
     margin-bottom: 2rem;
     margin-top:  2rem;
-
-    
 
     label{
         cursor: pointer;
@@ -55,6 +52,8 @@
         display: flex;
         align-items: center;
     }
+
+    
 
     // 안에 동그라미
     label:before{

@@ -76,7 +76,7 @@
         padding-left: 2rem;
         padding-right: 2rem;
         display: block;
-        border: 3px solid #1da1f2;;
+        border: 3px solid #1da1f2;
         border-radius: 20px;
         text-align: center;
         transition: 0.3s linear all;
@@ -87,22 +87,6 @@
         border: 3px solid darken($color: #1da1f2, $amount: 10%);
         box-shadow: 0 0 8px 0 #1da1f2;
     }
-
-    // .page-button-start {
-    //     background-color: #EAEAEA;
-    //     font-family: 'Black Han Sans', sans-serif;
-    //     font-size: 2rem;
-    //     color: #4C4C4C;
-    //     cursor: pointer;
-    //     padding: 1rem;
-    //     padding-left: 2rem;
-    //     padding-right: 2rem;
-    //     display: block;
-    //     border: 3px solid #EAEAEA;
-    //     border-radius: 20px;
-    //     text-align: center;
-    //     transition: 0.3s linear all;
-    // }
 
     a.page-button-start button:disabled:hover{
         background-color: #EAEAEA;

@@ -63,13 +63,13 @@ const Example = () => {
           className="page-button-start"
           style={{
             backgroundColor: answer !== "None" ? "#1da1f2" : "#eaeaea",
+            border: answer !== "None" ? "3px solid #1da1f2" : "3px solid #eaeaea",
           }}
           onClick={Failalert}
         >
-          검사시작
+          <ToastContainer autoClose={8000} />검사시작
         </button>
-        <ToastContainer autoClose={8000} />
-        <button onClick={Failalert}>alert 테스트</button>
+        
       </div>
     </>
   );
