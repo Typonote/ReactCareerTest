@@ -1,0 +1,80 @@
+.question-card {
+    background-color: #f8f8f8; //off-white
+    border-left: 5px solid #1da1f2;
+    width: 80%;
+    margin: 1rem auto 0 auto;
+    padding: 0.5rem 2rem;
+
+    h3{
+        font-size: 1.2rem;
+        color: #3F0099;  
+    }
+
+    h5 {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    h6 {
+        font-family: 'Black Han Sans', sans-serif;
+        font-size: 1.5rem;  
+    }
+
+    p{
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 1.5rem;   
+        color: #4C4C4C;
+        text-align: center;
+    }
+
+}
+
+
+
+.option-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    margin-top:  2rem;
+
+    
+
+    label{
+        cursor: pointer;
+        position: relative;
+        color:#1da1f2;
+        font-family: 'Black Han Sans', sans-serif;
+        font-size: 1.5rem;
+        border: 2px solid #1da1f2;
+        border-radius: 5rem;
+        padding: 10px 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    // 안에 동그라미
+    label:before{
+        content: "";
+        height: 30px;
+        width: 30px;
+        border: 3px solid #1da1f2;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    input[type="radio"]:checked + label{
+        background-color: #1da1f2;
+        color: white;
+    }
+
+    input[type="radio"]:checked + label:before{
+        height: 16px;
+        width: 16px;
+        border: 10px solid white;
+        background-color: #1da1f2;
+    }
+}

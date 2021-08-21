@@ -1,0 +1,106 @@
+#home {
+    background-image: url('../../assets/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 110vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+
+    section {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding-left: 2rem;
+        padding-right: 2rem;
+        height: 80%;
+        width: 35%;
+        text-align: center;
+    }
+
+    h1{
+        font-family: 'Black Han Sans', sans-serif;
+        text-align: center;
+        color: #f8f8f8;
+        font-size: 4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    .user-name-container{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: #f8f8f8;
+
+        input[type="text"]{
+            font-family: 'Black Han Sans', sans-serif;
+            text-align: center;
+            font-size: 1.3rem;
+            color: #4C4C4C;
+            width: 50%;
+            border: 2px solid white;
+            border-radius: 4px;
+            margin:8px 0;
+            outline: none;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus{
+            border-color: #57b846;
+            box-shadow: 0 0 8px 0 #57b846;
+        }
+
+    }
+
+    .play-button-container button{
+        width: 100%;
+    }
+
+    a.play-button button{
+        background-color: #57b846;
+        font-family: 'Black Han Sans', sans-serif;
+        font-size: 1.7rem;
+        color: white;
+        cursor: pointer;
+        padding: 1rem;
+        display: block;
+        border: 3px solid #EAEAEA;
+        border-radius: 30px;
+        text-align: center;
+        transition: 0.3s linear all;
+    }
+
+    a.play-button button:disabled{
+        background-color: #EAEAEA;
+        color: #4C4C4C;
+    }
+
+    a.play-button button:disabled:hover{
+        background-color: #EAEAEA;
+        box-shadow: 0 0 8px 0 #EAEAEA;
+    }
+
+    a.play-button button:enabled{
+        background-color: #57b846;
+        box-shadow: 0 0 8px 0 #57b846;
+        border: 3px solid #57b846;
+    }
+
+    a.play-button button:enabled:hover{
+        background-color: darken($color: #57b846, $amount: 10%);
+        border: 3px solid darken($color: #57b846, $amount: 10%);
+        box-shadow: 0 0 8px 0 #57b846;
+    }
+
+}
+
+@media (max-width: 768px) {
+    #home section {
+        padding: 0 1rem;
+        width: 100%;
+        height: 100%;
+    }
+}

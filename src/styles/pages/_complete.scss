@@ -1,0 +1,76 @@
+.MyProgressBar{
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 1rem;
+}
+
+
+.completion-information-container{
+    background-color: #E8D9FF;
+    border: 1px solid darken($color: #f8f8f8, $amount: 10%);
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding: 1.5rem 3rem;
+
+    h1{
+        font-family: 'Do Hyeon', sans-serif;
+        color: #333;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    p{
+        font-family: 'Do Hyeon', sans-serif;
+        color: #333;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+}
+
+.advice-container{
+    background-color: darken($color: #E8D9FF, $amount: 5%);
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.completion-button-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    
+    a:link {
+        text-decoration: none;
+    }
+
+    .completion-button-container button{
+        width: 100%;
+    }
+
+    a.page-button-result button:enabled{
+        background-color: #1da1f2;
+        font-family: 'Black Han Sans', sans-serif;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        padding: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: block;
+        border: 3px solid #1da1f2;;
+        border-radius: 20px;
+        text-align: center;
+        transition: 0.3s linear all;
+    }
+
+    a.page-button-result button:enabled:hover{
+        background-color: darken($color: #1da1f2, $amount: 10%);
+        border: 3px solid darken($color: #1da1f2, $amount: 10%);
+        box-shadow: 0 0 8px 0 #1da1f2;
+    }
+
+}

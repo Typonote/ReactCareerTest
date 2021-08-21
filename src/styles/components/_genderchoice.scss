@@ -1,0 +1,45 @@
+.user-gender-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+
+    input[type="radio"]{
+        display: none;
+    }
+
+    label{
+        cursor: pointer;
+        position: relative;
+        color:#57b846;
+        font-family: 'Black Han Sans', sans-serif;
+        font-size: 1.5rem;
+        border: 2px solid #57b846;
+        border-radius: 5px;
+        padding: 10px 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    label:before{
+        content: "";
+        height: 30px;
+        width: 30px;
+        border: 3px solid #57b846;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    input[type="radio"]:checked + label{
+        background-color: #57b846;
+        color: white;
+    }
+
+    input[type="radio"]:checked + label:before{
+        height: 16px;
+        width: 16px;
+        border: 10px solid white;
+        background-color: #57b846;
+    }
+}
