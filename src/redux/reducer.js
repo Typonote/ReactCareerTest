@@ -5,7 +5,9 @@ const initState = {
     answers: Array.from({ length: 29 }, () => 'None'),
     result: {
         bestAbility: '',
-        worstAbility: ''
+        worstAbility: '',
+        bestSecondAbility: '',
+        worstSecondAbility: '',
     }
 };
 
@@ -49,6 +51,8 @@ const Reducer = (state = initState, action) => {
                     ...state.result,
                     bestAbility: action.bestAbility,
                     worstAbility: action.worstAbility,
+                    bestSecondAbility: action.bestSecondAbility,
+                    worstSecondAbility: action.worstSecondAbility,
                 }
             };
         
@@ -60,7 +64,9 @@ const Reducer = (state = initState, action) => {
                 answers: Array.from({ length: 29 }, () => 'None'),
                 result: {
                     bestAbility: '',
-                    worstAbility: ''
+                    worstAbility: '',
+                    bestSecondAbility: '',
+                    worstSecondAbility: '',
                 }
             };
         

@@ -53,9 +53,33 @@ const Complete  = () => {
             const worstAbility = Ability[worstWonScoreIndex]; // 출력결과 = 능력발휘
 
             console.log('response',response);
-            console.log('worstAbility',worstAbility); // 0824일 여기까지 완성
+            // console.log('worstAbility',worstAbility); 
+
+            // 0824일 여기까지 완성
+            // 2번째 최대값을 구해야 함 =>   wonScore  [3, 4, 3, 4, 4, 3, 3, 4]
+            // 배열에서 최대값을 0으로 교체하고 거기서 다시 최대값을 찾음 
+            const secondBestwonScore = wonScore.splice(bestWonScoreIndex, 1, 0); // bestWonScoreIndex번쨰 부터 1개를 삭제 하고 0으로 추가  => wonScore  [3, 0, 3, 4, 4, 3, 3, 4]
+
+            const bestSecondWonScore = Math.max.apply(null, secondBestwonScore);  // 출력결과 = 4
+            const bestSecondWonScoreIndex = wonScore.indexOf(bestSecondWonScore); // 출력결과 = 3
+
+            const bestSecondAbility = Ability[bestSecondWonScoreIndex]; // 출력결과 = 안정성
+
+            console.log('wonScore',wonScore);
+
+            // 2번째 최소값을 구해야 함 =>   wonScore  [3, 0, 3, 4, 4, 3, 3, 4]
+            // 배열에서 0값을 다시 최대값으로 교체 + 최소값을 최대값으로 교체 + 거기서 최소값을 찾음 
+            wonScore.splice(bestWonScoreIndex, 1, bestWonScore); // wonScore  [3, 4, 3, 4, 4, 3, 3, 4] // 배열에서 0을 다시 최대값으로 교체
+            wonScore.splice(worstWonScoreIndex, 1, bestWonScore); // wonScore [4, 4, 3, 4, 4, 3, 3, 4] // 배열에서 첫번째 최소값을 최대값으로 교체
+
+            const worstSecondWonScore = Math.min.apply(null, wonScore);  // 출력결과 = 3
+            const worstSecondWonScoreIndex = wonScore.indexOf(worstSecondWonScore); // 출력결과 = 2
             
-            dispatch(actionSetResult(bestAbility,worstAbility));
+            const worstSecondAbility = Ability[worstSecondWonScoreIndex]; // 출력결과 = 보수
+
+            console.log(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility)
+
+            dispatch(actionSetResult(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility));
         };
 
         request();
