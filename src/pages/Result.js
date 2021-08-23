@@ -23,7 +23,7 @@ const Result = () => {
             <div className = "result-container">
                 <h1>{name}님의 직업가치관 검사 결과표</h1>
                 <div className="result-userinfo-container">
-                    <p>성별: {gender}</p>
+                    <p>성별: {gender === 'man'? '남성':'여성'}</p>
                     <NowDate />
                 </div>
                 <div className="result-display-container">
