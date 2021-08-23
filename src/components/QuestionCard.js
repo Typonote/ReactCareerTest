@@ -20,7 +20,7 @@ const QuestionCard = ({
     dispatch(actionSetAnswer(e.target.value, qitemNo));
   };
 
-  const ExampleDetail = () => {
+  const Hint = () => {
     const checked = answers[qitemNo];
     if (checked === answerScore01) {
       return <p>{answer03}</p>;
@@ -35,7 +35,7 @@ const QuestionCard = ({
     <div className="question-card">
       <h3># {qitemNo}</h3>
       <h5>{question}</h5>
-      {/* 0821 질문 1) */}
+      
       <div className="option-container">
         <input
           id="question-1"
@@ -56,7 +56,7 @@ const QuestionCard = ({
         />{" "}
         <label htmlFor="question-2">{answer02}</label>
       </div>
-      {ExampleDetail()}
+      {Hint()}
     </div>
   );
 };

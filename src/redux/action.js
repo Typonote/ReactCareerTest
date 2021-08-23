@@ -20,10 +20,10 @@ export const actionSetAnswer = (answer, index) => ({
     index,
 });
 
-export const actionSetResult = (MaxWonScore, MinWonScore) => ({
+export const actionSetResult = (bestWonScore, worstWonScore) => ({
     type: 'SET_RESULT',
-    MaxWonScore,
-    MinWonScore,
+    bestWonScore,
+    worstWonScore,
 });
 
 export const init = () => ({

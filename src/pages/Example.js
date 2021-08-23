@@ -68,7 +68,7 @@ const Example = () => {
           }}
           onClick={Failalert}
         >
-          <ToastContainer autoClose={8000} />검사시작
+          <ToastContainer autoClose={5000} />검사시작
         </button>
         
       </div>

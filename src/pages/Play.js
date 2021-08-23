@@ -84,8 +84,8 @@ const Play = ({ page }) => {
     // Toast 함수 
     const NextAlert = () => {
         if (next === true) {
-                return toast("다시 한 번 문항을 확인하세요", {
-                className: "custom-toast",
+                return toast.info("다시 한 번 문항을 확인하세요", {
+                className: "next-alert-toast",
                 draggable: true,
                 position: toast.POSITION.BOTTOM_CENTER,
             });
@@ -121,7 +121,7 @@ const Play = ({ page }) => {
                     />
                 ))}
             </div>
-            
+
             <div className="question-button-container">
                 
                 <Link to={page === '1' ? '/example' : `/Play/${Number(page) - 1 }`} className="question-prev">
@@ -140,7 +140,7 @@ const Play = ({ page }) => {
                     }}
                     onClick={NextAlert}
                     >
-                    <ToastContainer autoClose={8000} />다음
+                    <ToastContainer autoClose={5000} />다음
                 </button>
                 
             </div>
