@@ -19,7 +19,7 @@ export const PostResultAPI = async (data) => {
     const pushResponse = await axios.post(`${Q_URL}/report?apikey=${API_KEY}&q=${Q_NUM}` , data);
     const SEQ_NUM = pushResponse.data.RESULT.url.split('=')[1];
     const pullResponse = await axios.get(`${R_URL}/report?seq=${SEQ_NUM}`);
-    console.log("pullResponse", pullResponse);
+    // console.log("pullResponse", pullResponse);
     return pullResponse;
 };
 

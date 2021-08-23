@@ -11,9 +11,6 @@ const Complete  = () => {
     const name = useSelector((state) => state).name;
     const gender = useSelector((state) => state).gender;
 
-    const Ability= ['능력발휘', '자율성', '보수', '안정성', '사회적 인정', '사회봉사', '자기계발', '창의성'];
-    
-
     // post보낼 배열 준비
     const postDictionatry= {
         apikey: API_KEY,
@@ -39,9 +36,24 @@ const Complete  = () => {
     // 준비된 postDictionatry 배열 post로 보냄.
     useEffect(() => {
         const request = async () => {
-            const response = await PostResultAPI(postDictionatry);
-    
+            const response = await PostResultAPI(postDictionatry); // 받은 결과 1=3 2=4 3=3 4=4 5=4 6=3 7=3 8=4 
+            const wonScore = response.data.result.wonScore.split(' ').splice(0, 8).map((answer) => Number(answer.split('=')[1]));  // 출력결과: wonScore  [3, 4, 3, 4, 4, 3, 3, 4]
+            
+            const bestWonScore = Math.max.apply(null, wonScore);  // 출력결과 = 4
+            const worstWonScore = Math.min.apply(null, wonScore); // 출력결과 = 3
+
+            const bestWonScoreIndex = wonScore.indexOf(bestWonScore); // 출력결과 = 1
+            const worstWonScoreIndex = wonScore.indexOf(worstWonScore); // 출력결과 = 0 
+
+            const Ability = ['능력발휘', '자율성', '보수', '안정성', '사회적 인정', '사회봉사', '자기계발', '창의성'];
+
+            const bestAbility = Ability[bestWonScoreIndex]; // 출력결과 = 자율성
+            const worstAbility = Ability[worstWonScoreIndex]; // 출력결과 = 능력발휘
+
             console.log('response',response);
+            console.log('worstAbility',worstAbility); // 0824일 여기까지 완성
+            
+            // dispatch(setResult());
         };
 
         request();
