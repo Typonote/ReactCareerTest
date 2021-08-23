@@ -19,15 +19,15 @@ const Result = () => {
 
     return (
         <>
-            <Helmet><title>직업가치관검사 - 검사표</title></Helmet>
+            <Helmet><title>직업가치관검사 - 결과표</title></Helmet>
             <div className = "result-container">
-                <h1>{name}님의 직업가치관 검사 검사표</h1>
+                <h1>{name}님의 직업가치관 검사 결과표</h1>
                 <div className="result-userinfo-container">
                     <p>성별: {gender}</p>
                     <NowDate />
                 </div>
                 <div className="result-display-container">
-                    <p>코로나19 신규 확진자가 하루 새 1880명 늘었지만 이틀 만에 2000명 아래로 떨어졌다. 중앙방역대책본부는 21일 0시 기준 신규 확진자가 국내 발생 1814명, 해외 유입 66명으로 모두 1880명이라고 발표했다. 지역별 국내 발생 확진자는 경기 585명, 서울 518명, 경북 109명 등이다. 1880명의 확진자 수는 46일 연속 네 자릿수를 기록한 것이다.</p>
+                    <p>직업가치관이란 직업을 선택할 때 영향을 끼치는 자신만의 믿음과 신념입니다. 따라서 여러분의 직업생활과 관련하여 포기하지 않는 무게중심의 역할을 한다고 볼 수 있습니다. 직업가치관검사는 여러분이 직업을 선택할 때 상대적으로 어떠한 가치를 중요하게 생각하는지를 알려줍니다. 또한 본인이 가장 중요하게 생각하는 가치를 충족시켜줄 수 있는 직업에 대해 생각해 볼 기회를 제공합니다.</p>
                 </div>
             </div>
             <div className="restart-button-container">

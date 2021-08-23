@@ -3,9 +3,13 @@ const initState = {
     gender: '',
     question: [],
     answers: Array.from({ length: 29 }, () => 'None'),
+    values: {
+        MaxWonScore: [],
+        MinWonScore: []
+    }
 };
 
-// reducer 만들기
+
 const Reducer = (state = initState, action) => {
     switch (action.type) {
         case 'USER_NAME':
@@ -37,6 +41,18 @@ const Reducer = (state = initState, action) => {
                     }
                 }),
             };
+
+        case 'SET_RESULT':
+            return {
+                ...state,
+                name: '',
+                gender: '',
+                answers: Array.from({ length: 29 }, () => 'None'),
+                values: {
+                    MaxWonScore: [],
+                    MinWonScore: []
+                }
+            };
         
         case 'init':
             return {
@@ -44,6 +60,10 @@ const Reducer = (state = initState, action) => {
                 name: '',
                 gender: '',
                 answers: Array.from({ length: 29 }, () => 'None'),
+                values: {
+                    MaxWonScore: [],
+                    MinWonScore: []
+                }
             };
         
         default:

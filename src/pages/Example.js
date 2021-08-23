@@ -54,11 +54,12 @@ const Example = () => {
           answerScore02={sample.answerScore02}
         />
       </div>
-      {/* 0821 질문 2) */}
+      
       <div className="button-container">
         <Link className="page-button-home" to="/">
           <button>홈으로</button>
         </Link>
+
         <button
           className="page-button-start"
           style={{

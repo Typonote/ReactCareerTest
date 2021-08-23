@@ -20,6 +20,12 @@ export const actionSetAnswer = (answer, index) => ({
     index,
 });
 
+export const actionSetResult = (MaxWonScore, MinWonScore) => ({
+    type: 'SET_RESULT',
+    MaxWonScore,
+    MinWonScore,
+});
+
 export const init = () => ({
     type: 'init',
 });

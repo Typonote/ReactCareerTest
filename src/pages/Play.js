@@ -17,8 +17,8 @@ const Play = ({ page }) => {
 
     const [playPage, setPlayPage] = useState([]);
 
-    // 초기값은 비활성화된 상태 => return false면 비활성화, return true는 enabled된 상태
-    const [disabled, setDisabled] = useState(false); 
+    // 초기값은 비활성화된 상태 => return false면 비활성화+toast, return true는 enabled된 상태
+    const [next, setNext] = useState(false); 
     
 
 
@@ -60,10 +60,10 @@ const Play = ({ page }) => {
             
             // true값이 나오면 (none값이 있는 경우)
             
-            setDisabled(true);  // disabled
+            setNext(true);  // disabled
         } else {
             // none값이 없는 경우
-            setDisabled(false); // enabled
+            setNext(false); // enabled
         }
     }, [page]);
 
@@ -76,9 +76,28 @@ const Play = ({ page }) => {
 
     // 값이 갱신될 때, 5개 값 확인 => 다시 answers 리스트로 반환
     useEffect(() => {
-        setDisabled(noneChecked(5 * (Number(page) - 1) + 1, 5 * Number(page) + 1));
+        setNext(noneChecked(5 * (Number(page) - 1) + 1, 5 * Number(page) + 1));
     }, [answers]);
 
+    console.log("배열",answers);
+    
+    // Toast 함수 
+    const NextAlert = () => {
+        if (next === true) {
+                return toast("다시 한 번 문항을 확인하세요", {
+                className: "custom-toast",
+                draggable: true,
+                position: toast.POSITION.BOTTOM_CENTER,
+            });
+        } 
+
+            if(page === '6'){
+                history.push("/complete");
+            }else{
+                history.push(`/Play/${Number(page) + 1}`);
+            }
+    };
+    
     return (
         <div>
             <Helmet><title>직업가치관검사 - 검사</title></Helmet>
@@ -102,6 +121,7 @@ const Play = ({ page }) => {
                     />
                 ))}
             </div>
+            
             <div className="question-button-container">
                 
                 <Link to={page === '1' ? '/example' : `/Play/${Number(page) - 1 }`} className="question-prev">
@@ -112,9 +132,17 @@ const Play = ({ page }) => {
                     <button>홈으로</button>
                 </Link>
                 
-                <Link to={page === '6' ? '/complete' : `/Play/${Number(page) + 1}`} className="question-next">
-                    <button disabled={disabled ? true : false} >다음</button>
-                </Link>
+                <button
+                    className="question-next"
+                    style={{
+                        backgroundColor: next !== true ? "#57b846" : "#eaeaea",
+                        border: next !== true ? "3px solid #57b846" : "3px solid #eaeaea",
+                    }}
+                    onClick={NextAlert}
+                    >
+                    <ToastContainer autoClose={8000} />다음
+                </button>
+                
             </div>
         </div>
     );
