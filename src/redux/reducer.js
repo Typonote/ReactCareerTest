@@ -4,8 +4,8 @@ const initState = {
     question: [],
     answers: Array.from({ length: 29 }, () => 'None'),
     result: {
-        bestAbility: [],
-        worstAbility: []
+        bestAbility: '',
+        worstAbility: ''
     }
 };
 
@@ -45,12 +45,10 @@ const Reducer = (state = initState, action) => {
         case 'SET_RESULT':
             return {
                 ...state,
-                name: '',
-                gender: '',
-                answers: Array.from({ length: 29 }, () => 'None'),
                 result: {
-                    bestAbility: [],
-                    worstAbility: []
+                    ...state.result,
+                    bestAbility: action.bestAbility,
+                    worstAbility: action.worstAbility,
                 }
             };
         
@@ -61,8 +59,8 @@ const Reducer = (state = initState, action) => {
                 gender: '',
                 answers: Array.from({ length: 29 }, () => 'None'),
                 result: {
-                    bestAbility: [],
-                    worstAbility: []
+                    bestAbility: '',
+                    worstAbility: ''
                 }
             };
         
