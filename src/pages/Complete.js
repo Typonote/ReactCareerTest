@@ -58,9 +58,9 @@ const Complete  = () => {
             // 0824일 여기까지 완성
             // 2번째 최대값을 구해야 함 =>   wonScore  [3, 4, 3, 4, 4, 3, 3, 4]
             // 배열에서 최대값을 0으로 교체하고 거기서 다시 최대값을 찾음 
-            const secondBestwonScore = wonScore.splice(bestWonScoreIndex, 1, 0); // bestWonScoreIndex번쨰 부터 1개를 삭제 하고 0으로 추가  => wonScore  [3, 0, 3, 4, 4, 3, 3, 4]
+            wonScore.splice(bestWonScoreIndex, 1, 0); // bestWonScoreIndex번쨰 부터 1개를 삭제 하고 0으로 추가  => wonScore  [3, 0, 3, 4, 4, 3, 3, 4]
 
-            const bestSecondWonScore = Math.max.apply(null, secondBestwonScore);  // 출력결과 = 4
+            const bestSecondWonScore = Math.max.apply(null, wonScore);  // 출력결과 = 4
             const bestSecondWonScoreIndex = wonScore.indexOf(bestSecondWonScore); // 출력결과 = 3
 
             const bestSecondAbility = Ability[bestSecondWonScoreIndex]; // 출력결과 = 안정성
@@ -77,9 +77,13 @@ const Complete  = () => {
             
             const worstSecondAbility = Ability[worstSecondWonScoreIndex]; // 출력결과 = 보수
 
-            console.log(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility)
+            wonScore.splice(worstWonScoreIndex, 1, worstWonScore);
 
-            dispatch(actionSetResult(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility));
+            console.log('wonScore',wonScore); // 다시 원래대로 wonScore  [3, 4, 3, 4, 4, 3, 3, 4]
+
+            console.log(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex)
+
+            dispatch(actionSetResult(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex));
         };
 
         request();
