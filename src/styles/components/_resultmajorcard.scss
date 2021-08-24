@@ -1,0 +1,38 @@
+.major-table{
+    width: 70%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow:  0 0 20px rgba(0,0,0,0.15);
+}
+
+.major-table thead tr {
+    background-color: #ffa500;
+    color: white;
+}
+
+.major-table thead th,
+.major-table thead td {
+    padding: 1rem;
+}
+
+.major-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.major-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.major-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ffa500;
+}
+
+.title p{
+    background-color:#BDBDBD;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

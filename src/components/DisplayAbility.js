@@ -15,7 +15,7 @@ const DisplayAbility  = () => {
         <>
             <div className="advice-container">
                     <p>{`${name}님은 직업생활과 관련하여 ${bestAbility}(와)과 ${bestSecondAbility}(을)를 가장 중요하게 생각합니다.`}</p>
-                    <p>{`반면에 ${worstAbility}(와)과 ${worstSecondAbility}은 상대적으로 덜 중요하게 생각합니다.`}</p>
+                    <p>{`반면에 ${worstAbility}(와)과 ${worstSecondAbility}은(는) 상대적으로 덜 중요하게 생각합니다.`}</p>
             </div>  
         </>
     );
