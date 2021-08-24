@@ -65,7 +65,7 @@ const Complete  = () => {
 
             const bestSecondAbility = Ability[bestSecondWonScoreIndex]; // 출력결과 = 안정성
 
-            console.log('wonScore',wonScore);
+            // console.log('wonScore',wonScore);
 
             // 2번째 최소값을 구해야 함 =>   wonScore  [3, 0, 3, 4, 4, 3, 3, 4]
             // 배열에서 0값을 다시 최대값으로 교체 + 최소값을 최대값으로 교체 + 거기서 최소값을 찾음 

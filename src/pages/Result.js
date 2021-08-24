@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { init } from '../redux/action';
+import { actionSetResult, init } from '../redux/action';
 import { Helmet } from 'react-helmet';
 import NowDate from '../components/NowDate';
 import ResultCard from '../components/ResultCard';
 import ResultGraph from '../components/ResultGraph';
+import { GetJobAPI } from '../api/OpenAPI';
 
 const Result = () => {
     const dispatch = useDispatch();
@@ -14,10 +15,28 @@ const Result = () => {
     const name = useSelector((state) => state).name;
     const gender = useSelector((state) => state).gender;
 
-    // 다시 검사하기 버튼 누르면 초기화 
-    const handleClick = () => {
+    // 다시 검사하기 => 초기화 
+    const onClickhandler = () => {
         dispatch(init());
     };
+
+    //////////////////////////////////////////////////////////////////// api연결 (8월 24일)
+
+    const bestWonScoreIndex = useSelector((state) => state).result.bestWonScoreIndex;
+    const bestSecondWonScoreIndex = useSelector((state) => state).result.bestSecondWonScoreIndex;
+    // const result = useSelector((state) => state).result;
+
+    console.log('테스트',bestWonScoreIndex,bestSecondWonScoreIndex);
+
+    useEffect(() => {
+        const request = async () => {
+            const response = await GetJobAPI();
+            console.log('response',response)
+            dispatch(actionSetResult(response));
+        };
+        request();
+    }, []);
+
 
     return (
         <>
@@ -35,7 +54,7 @@ const Result = () => {
             </div>
             <div className="restart-button-container">
                     <Link to="/" className="restart">
-                        <button onClick={handleClick} className="restart">
+                        <button onClick={onClickhandler} className="restart">
                             다시 검사하기
                             </button>
                     </Link>
