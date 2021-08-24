@@ -3,7 +3,9 @@ import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { API_KEY, PostResultAPI, Q_NUM } from '../api/OpenAPI';
+import DisplayAbility from '../components/DisplayAbility';
 import MyProgressBar from '../components/MyProgressBar';
+import { actionSetResult } from '../redux/action';
 
 const Complete  = () => {
 
@@ -51,9 +53,37 @@ const Complete  = () => {
             const worstAbility = Ability[worstWonScoreIndex]; // 출력결과 = 능력발휘
 
             console.log('response',response);
-            console.log('worstAbility',worstAbility); // 0824일 여기까지 완성
+            // console.log('worstAbility',worstAbility); 
+
+            // 0824일 여기까지 완성
+            // 2번째 최대값을 구해야 함 =>   wonScore  [3, 4, 3, 4, 4, 3, 3, 4]
+            // 배열에서 최대값을 0으로 교체하고 거기서 다시 최대값을 찾음 
+            wonScore.splice(bestWonScoreIndex, 1, 0); // bestWonScoreIndex번쨰 부터 1개를 삭제 하고 0으로 추가  => wonScore  [3, 0, 3, 4, 4, 3, 3, 4]
+
+            const bestSecondWonScore = Math.max.apply(null, wonScore);  // 출력결과 = 4
+            const bestSecondWonScoreIndex = wonScore.indexOf(bestSecondWonScore); // 출력결과 = 3
+
+            const bestSecondAbility = Ability[bestSecondWonScoreIndex]; // 출력결과 = 안정성
+
+            console.log('wonScore',wonScore);
+
+            // 2번째 최소값을 구해야 함 =>   wonScore  [3, 0, 3, 4, 4, 3, 3, 4]
+            // 배열에서 0값을 다시 최대값으로 교체 + 최소값을 최대값으로 교체 + 거기서 최소값을 찾음 
+            wonScore.splice(bestWonScoreIndex, 1, bestWonScore); // wonScore  [3, 4, 3, 4, 4, 3, 3, 4] // 배열에서 0을 다시 최대값으로 교체
+            wonScore.splice(worstWonScoreIndex, 1, bestWonScore); // wonScore [4, 4, 3, 4, 4, 3, 3, 4] // 배열에서 첫번째 최소값을 최대값으로 교체
+
+            const worstSecondWonScore = Math.min.apply(null, wonScore);  // 출력결과 = 3
+            const worstSecondWonScoreIndex = wonScore.indexOf(worstSecondWonScore); // 출력결과 = 2
             
-            // dispatch(setResult());
+            const worstSecondAbility = Ability[worstSecondWonScoreIndex]; // 출력결과 = 보수
+
+            wonScore.splice(worstWonScoreIndex, 1, worstWonScore);
+
+            console.log('wonScore',wonScore); // 다시 원래대로 wonScore  [3, 4, 3, 4, 4, 3, 3, 4]
+
+            console.log(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex)
+
+            dispatch(actionSetResult(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex));
         };
 
         request();
@@ -72,10 +102,7 @@ const Complete  = () => {
                 <p>{name}님 수고하셨습니다.</p>
                 <p>검사결과는 여러분이 직업을 선택할 때 상대적으로 어떠한 가치를 중요하게 생각하는지를 알려주고,<br></br> 
                 중요 가치를 충족시킬 수 있는 직업에 대해 생각해 볼 기회를 제공합니다.</p>
-                    <div className="advice-container">
-                        <p>{name}님은 직업생활과 관련하여 {}(와)과 {}(을)를 가장 중요하게 생각합니다.</p>
-                        <p>반면에 {}, {}은 상대적으로 덜 중요하게 생각합니다.</p>
-                    </div>   
+                    <DisplayAbility />   
             </div>
             <div className="completion-button-container">
                 <Link to="/result" className="page-button-result">
@@ -87,3 +114,5 @@ const Complete  = () => {
 };
 
 export default Complete;
+
+

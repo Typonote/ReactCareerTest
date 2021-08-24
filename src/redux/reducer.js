@@ -2,10 +2,14 @@ const initState = {
     name: '',
     gender: '',
     question: [],
-    answers: Array.from({ length: 29 }, () => 'None'),
+    answers: Array.from({ length: 29 }, () => 'Null'),
     result: {
-        bestAbility: [],
-        worstAbility: []
+        bestAbility: '',
+        worstAbility: '',
+        bestSecondAbility: '',
+        worstSecondAbility: '',
+        bestWonScoreIndex: '',
+        bestSecondWonScoreIndex: '',
     }
 };
 
@@ -45,12 +49,14 @@ const Reducer = (state = initState, action) => {
         case 'SET_RESULT':
             return {
                 ...state,
-                name: '',
-                gender: '',
-                answers: Array.from({ length: 29 }, () => 'None'),
                 result: {
-                    bestAbility: [],
-                    worstAbility: []
+                    ...state.result,
+                    bestAbility: action.bestAbility,
+                    worstAbility: action.worstAbility,
+                    bestSecondAbility: action.bestSecondAbility,
+                    worstSecondAbility: action.worstSecondAbility,
+                    bestWonScoreIndex: action.bestWonScoreIndex,
+                    bestSecondWonScoreIndex: action.bestSecondWonScoreIndex,
                 }
             };
         
@@ -59,10 +65,14 @@ const Reducer = (state = initState, action) => {
                 ...state,
                 name: '',
                 gender: '',
-                answers: Array.from({ length: 29 }, () => 'None'),
+                answers: Array.from({ length: 29 }, () => 'Null'),
                 result: {
-                    bestAbility: [],
-                    worstAbility: []
+                    bestAbility: '',
+                    worstAbility: '',
+                    bestSecondAbility: '',
+                    worstSecondAbility: '',
+                    bestWonScoreIndex: '',
+                    bestSecondWonScoreIndex: '',
                 }
             };
         

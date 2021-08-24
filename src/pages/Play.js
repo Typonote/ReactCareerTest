@@ -24,9 +24,9 @@ const Play = ({ page }) => {
 
     // 5개씩 slice한 answers[]에서 빈 값이 있나 check.
 
-    const noneChecked = (start, last) => {
-        if (answers.slice(start, last).find((answer) => answer === 'None')) {
-            return true; // none값이 있으면 true 반환
+    const nullChecked = (start, last) => {
+        if (answers.slice(start, last).find((answer) => answer === 'Null')) {
+            return true; // null값이 있으면 true 반환
         }
             return false;
     };
@@ -52,31 +52,31 @@ const Play = ({ page }) => {
         setPlayPage(questions.slice(5 * (Number(page) - 1), 5 * Number(page)));
 
         // page의 결과 값이 모두 있으면 다음 버튼을 활성화 => 아니면 비활성화
-        if (noneChecked(5 * (Number(page) - 1) + 1, 5 * Number(page) + 1)) {
-            // page: 1 => noneChecked(1, 6) => answer를 1부터 5까지 check
-            // page: 2 => noneCheked(6,11) => answer를 6부터 10까지 check
-            // page: 3 => noneCheked(11,16) => answer를 11부터 15까지 check
-            // page: 5 => noneCheked(21,26) => => answer를 21부터 25까지 check
+        if (nullChecked(5 * (Number(page) - 1) + 1, 5 * Number(page) + 1)) {
+            // page: 1 => nullChecked(1, 6) => answer를 1부터 5까지 check
+            // page: 2 => nullCheked(6,11) => answer를 6부터 10까지 check
+            // page: 3 => nullCheked(11,16) => answer를 11부터 15까지 check
+            // page: 5 => nullCheked(21,26) => => answer를 21부터 25까지 check
             
-            // true값이 나오면 (none값이 있는 경우)
+            // true값이 나오면 (null값이 있는 경우)
             
             setNext(true);  // disabled
         } else {
-            // none값이 없는 경우
+            // null값이 없는 경우
             setNext(false); // enabled
         }
     }, [page]);
 
 
 
-    // page: 1 => noneChecked(1, 6) => answer를 1부터 5까지 check
-    // page: 2 => noneCheked(6,11) => answer를 6부터 10까지 check
-    // page: 3 => noneCheked(11,16) => answer를 11부터 15까지 check
-    // page: 5 => noneCheked(21,26) => => answer를 21부터 25까지 check
+    // page: 1 => nullChecked(1, 6) => answer를 1부터 5까지 check
+    // page: 2 => nullCheked(6,11) => answer를 6부터 10까지 check
+    // page: 3 => nullCheked(11,16) => answer를 11부터 15까지 check
+    // page: 5 => nullCheked(21,26) => => answer를 21부터 25까지 check
 
     // 값이 갱신될 때, 5개 값 확인 => 다시 answers 리스트로 반환
     useEffect(() => {
-        setNext(noneChecked(5 * (Number(page) - 1) + 1, 5 * Number(page) + 1));
+        setNext(nullChecked(5 * (Number(page) - 1) + 1, 5 * Number(page) + 1));
     }, [answers]);
 
     console.log("배열",answers);

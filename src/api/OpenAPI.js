@@ -12,8 +12,7 @@ export const GetQuestionAPI = async () => {
 };
 
 // 결과 보내고 받아옴 => 나의 답변을 보내야함.
-//예시
-// pushResponse는 "https://www.career.go.kr/inspct/web/psycho/value/report?seq=NTQ5ODc4NTA" 이렇게 옴.
+// 예시) pushResponse는 "https://www.career.go.kr/inspct/web/psycho/value/report?seq=NTQ5ODc4NTA" 이렇게 옴.
 
 export const PostResultAPI = async (data) => { 
     const pushResponse = await axios.post(`${Q_URL}/report?apikey=${API_KEY}&q=${Q_NUM}` , data);
@@ -24,6 +23,8 @@ export const PostResultAPI = async (data) => {
 };
 
 
-//8월 18일 수업
-// GET https://www.career.go.kr/inspct/api/psycho/report?seq=NTQ5NzA5NDg 이 요청으로도 결과 정보를 받아올 수 있네요
-// https://www.career.go.kr/inspct/api/psycho/report?seq=NTQ5NzA5NDg 
+// 종사자 평균 학력별 직업 정보 요청
+export const GetJobAPI = async (result) => {
+    const response = await axios.get(`${R_URL}/value/jobs?no1=${result[4]}&no2=${result[5]}`);
+    return response.data;
+};

@@ -14,7 +14,7 @@ const Example = () => {
 
   // 0821 질문 2)
   const Failalert = () => {
-    if (answer === "None") {
+    if (answer === "Null") {
       return toast("다시 한 번 문항을 확인하세요", {
         className: "custom-toast",
         draggable: true,
@@ -63,8 +63,8 @@ const Example = () => {
         <button
           className="page-button-start"
           style={{
-            backgroundColor: answer !== "None" ? "#1da1f2" : "#eaeaea",
-            border: answer !== "None" ? "3px solid #1da1f2" : "3px solid #eaeaea",
+            backgroundColor: answer !== "Null" ? "#1da1f2" : "#eaeaea",
+            border: answer !== "Null" ? "3px solid #1da1f2" : "3px solid #eaeaea",
           }}
           onClick={Failalert}
         >
