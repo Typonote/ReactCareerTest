@@ -1,15 +1,17 @@
 import React from 'react';
+import ResultLevelCard from './ResultLevelCard';
+import ResultMajorCard from './ResultMajorCard';
 
 // 현재시간 컴포넌트
 const ResultCard = () => {
     
-    var today = new Date();
-    var nowYear = today.getFullYear();
-    var nowMonth = today.getMonth();
-    var nowDate = today.getDate();
-
+    
     return (
-        <p>검사일: {nowYear}년 {nowMonth+1}월 {nowDate}일</p>
+        <>
+            <h3>가치관과 관련이 높은 직업</h3>
+            <ResultLevelCard />
+            <ResultMajorCard />
+        </>
     );
 };
 
