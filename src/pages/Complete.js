@@ -52,7 +52,7 @@ const Complete  = () => {
             const bestAbility = Ability[bestWonScoreIndex]; // 출력결과 = 자율성
             const worstAbility = Ability[worstWonScoreIndex]; // 출력결과 = 능력발휘
 
-            console.log('response',response);
+            // console.log('response',response);
             // console.log('worstAbility',worstAbility); 
 
             // 0824일 여기까지 완성

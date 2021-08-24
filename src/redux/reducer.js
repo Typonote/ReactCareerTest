@@ -3,6 +3,8 @@ const initState = {
     gender: '',
     question: [],
     answers: Array.from({ length: 29 }, () => 'Null'),
+    job: [],
+    major: [],
     result: {
         bestAbility: '',
         worstAbility: '',
@@ -46,6 +48,18 @@ const Reducer = (state = initState, action) => {
                 }),
             };
 
+        case 'USER_JOB':
+            return {
+                ...state,
+                job: action.job,
+            };
+
+        case 'USER_MAJOR':
+            return {
+                ...state,
+                major: action.major,
+            };
+
         case 'SET_RESULT':
             return {
                 ...state,
@@ -66,6 +80,8 @@ const Reducer = (state = initState, action) => {
                 name: '',
                 gender: '',
                 answers: Array.from({ length: 29 }, () => 'Null'),
+                job: [],
+                major: [],
                 result: {
                     bestAbility: '',
                     worstAbility: '',

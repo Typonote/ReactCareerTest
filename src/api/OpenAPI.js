@@ -24,9 +24,3 @@ export const PostResultAPI = async (data) => {
 
 
 
-// 종사자 평균 학력별 직업 정보 요청
-export const GetJobAPI = async (result) => {
-    const response = await axios.get(`${R_URL}/value/jobs?no1=${result[4]}&no2=${result[5]}`);
-    console.log("직업API", response);
-    return response.data;
-};

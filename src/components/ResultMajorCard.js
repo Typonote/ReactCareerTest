@@ -1,7 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const ResultMajorCard = () => {
     
+    const major = useSelector((state) => state).major;
+
+    console.log('major',major);
+
+
+    const affiliation = ["계열무관",  "인문", "사회", "교육", "공학","자연","의학","예체능"]
+
     return (
         <>
         <div className='title'> 
@@ -16,35 +24,35 @@ const ResultMajorCard = () => {
             </thead>
             <tbody>
                 <tr>
-                    <td>계열무관</td>
+                    <td>{affiliation[0]}</td>
                     <td>계열무관직업명....</td>
                 </tr>
                 <tr>
-                    <td>인문</td>
+                    <td>{affiliation[1]}</td>
                     <td>인문직업명....</td>
                 </tr>
                 <tr>
-                    <td>사회</td>
+                    <td>{affiliation[2]}</td>
                     <td>사회직업명....</td>
                 </tr>
                 <tr>
-                    <td>교육</td>
+                    <td>{affiliation[3]}</td>
                     <td>교육직업명....</td>
                 </tr>
                 <tr>
-                    <td>공학</td>
+                    <td>{affiliation[4]}</td>
                     <td>공학직업명....</td>
                 </tr>
                 <tr>
-                    <td>자연</td>
+                    <td>{affiliation[5]}</td>
                     <td>자연직업명....</td>
                 </tr>
                 <tr>
-                    <td>의학</td>
+                    <td>{affiliation[6]}</td>
                     <td>의학직업명....</td>
                 </tr>
                 <tr>
-                    <td>예체능</td>
+                    <td>{affiliation[0]}</td>
                     <td>예체능직업명....</td>
                 </tr>
             </tbody>

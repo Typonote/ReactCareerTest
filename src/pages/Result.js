@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionSetResult, init } from '../redux/action';
+import { actionSetJob, actionSetMajor, actionSetResult, init } from '../redux/action';
 import { Helmet } from 'react-helmet';
 import NowDate from '../components/NowDate';
 import ResultCard from '../components/ResultCard';
 import ResultGraph from '../components/ResultGraph';
 import { GetJobAPI } from '../api/OpenAPI';
+import axios from 'axios';
 
 const Result = () => {
     const dispatch = useDispatch();
@@ -14,29 +15,39 @@ const Result = () => {
     // redux에 저장된 이름값 읽어오기
     const name = useSelector((state) => state).name;
     const gender = useSelector((state) => state).gender;
+    const result = useSelector((state) => state).result;
+    const job = useSelector((state) => state).job;
 
     // 다시 검사하기 => 초기화 
     const onClickhandler = () => {
         dispatch(init());
     };
 
-    //////////////////////////////////////////////////////////////////// api연결 (8월 24일)
+    // 종사자 평균 학력별 직업 정보 요청 (성공)
+    const GetJobAPI = async () => {
+        
+        const JobResponse = await axios.get(`https://inspct.career.go.kr/inspct/api/psycho/value/jobs?no1=${result.bestWonScoreIndex}&no2=${result.bestSecondWonScoreIndex}`);
+        
+        //console.log('JobResponse',JobResponse.data);
+        dispatch(actionSetJob(JobResponse.data));
+        return JobResponse.data;
+    };
 
-    const bestWonScoreIndex = useSelector((state) => state).result.bestWonScoreIndex;
-    const bestSecondWonScoreIndex = useSelector((state) => state).result.bestSecondWonScoreIndex;
-    // const result = useSelector((state) => state).result;
 
-    console.log('테스트',bestWonScoreIndex,bestSecondWonScoreIndex);
+    // 종사자 평균 전공별 직업 정보 요청 (성공)
+    const GetMajorAPI = async () => {
+        
+        const majorResponse = await axios.get(`https://inspct.career.go.kr/inspct/api/psycho/value/majors?no1=${result.bestWonScoreIndex}&no2=${result.bestSecondWonScoreIndex}`);
+        
+        //console.log('majorResponse',majorResponse.data);
+        dispatch(actionSetMajor(majorResponse.data));
+        return majorResponse.data;
+    };
 
     useEffect(() => {
-        const request = async () => {
-            const response = await GetJobAPI();
-            console.log('response',response)
-            dispatch(actionSetResult(response));
-        };
-        request();
+        GetJobAPI();
+        GetMajorAPI();
     }, []);
-
 
     return (
         <>

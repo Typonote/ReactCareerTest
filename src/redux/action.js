@@ -20,6 +20,16 @@ export const actionSetAnswer = (answer, index) => ({
     index,
 });
 
+export const actionSetJob = (job) => ({
+    type: 'USER_JOB',
+    job,
+});
+
+export const actionSetMajor = (major) => ({
+    type: 'USER_MAJOR',
+    major,
+});
+
 export const actionSetResult = (bestAbility, worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex) => ({
     type: 'SET_RESULT',
     bestAbility,

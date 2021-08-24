@@ -1,11 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const ResultLevelCard = () => {
 
+    const job = useSelector((state) => state).job;
 
-
+    console.log('job',job);
 
     
+    const level = ["중졸",  "고졸", "전문대졸", "대졸", "대학원졸"]
+
     return (
         <>
             <div className='title'> 
@@ -20,24 +24,32 @@ const ResultLevelCard = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>중졸</td>
-                        <td>중졸직업명....</td>
+                        <td>{level[0]}</td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>고졸</td>
-                        <td>고졸직업명....</td>
+                        <td>{level[1]}</td>
+                        <td>
+                            
+                        </td>
                     </tr>
                     <tr>
-                        <td>전문대졸</td>
-                        <td>전문대졸직업명....</td>
+                        <td>{level[2]}</td>
+                        <td>
+                            
+                        </td>
                     </tr>
                     <tr>
-                        <td>대졸</td>
-                        <td>대졸직업명....</td>
+                        <td>{level[3]}</td>
+                        <td>
+                            
+                        </td>
                     </tr>
                     <tr>
-                        <td>대학원졸</td>
-                        <td>대학원졸직업명....</td>
+                        <td>{level[4]}</td>
+                        <td>
+                            
+                        </td>
                     </tr>
                 </tbody>
             </table>
