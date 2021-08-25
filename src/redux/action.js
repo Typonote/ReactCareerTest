@@ -30,7 +30,7 @@ export const actionSetMajor = (major) => ({
     major,
 });
 
-export const actionSetResult = (bestAbility, worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex) => ({
+export const actionSetResult = (bestAbility, worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex,wonScore) => ({
     type: 'SET_RESULT',
     bestAbility,
     worstAbility,
@@ -38,6 +38,7 @@ export const actionSetResult = (bestAbility, worstAbility,bestSecondAbility,wors
     worstSecondAbility,
     bestWonScoreIndex,
     bestSecondWonScoreIndex,
+    wonScore
 });
 
 export const init = () => ({

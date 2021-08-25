@@ -12,6 +12,7 @@ const initState = {
         worstSecondAbility: '',
         bestWonScoreIndex: '',
         bestSecondWonScoreIndex: '',
+        wonScore:'',
     }
 };
 
@@ -71,6 +72,7 @@ const Reducer = (state = initState, action) => {
                     worstSecondAbility: action.worstSecondAbility,
                     bestWonScoreIndex: action.bestWonScoreIndex,
                     bestSecondWonScoreIndex: action.bestSecondWonScoreIndex,
+                    wonScore: action.wonScore,
                 }
             };
         
@@ -89,6 +91,7 @@ const Reducer = (state = initState, action) => {
                     worstSecondAbility: '',
                     bestWonScoreIndex: '',
                     bestSecondWonScoreIndex: '',
+                    wonScore: '',
                 }
             };
         

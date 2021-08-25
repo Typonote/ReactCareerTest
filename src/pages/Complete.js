@@ -83,7 +83,7 @@ const Complete  = () => {
 
             console.log(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex)
 
-            dispatch(actionSetResult(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex));
+            dispatch(actionSetResult(bestAbility,worstAbility,bestSecondAbility,worstSecondAbility,bestWonScoreIndex,bestSecondWonScoreIndex,wonScore));
         };
 
         request();
