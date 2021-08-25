@@ -38,23 +38,23 @@ const QuestionCard = ({
       
       <div className="option-container">
         <input
-          id="question-1"
+          id={`Question-${qitemNo}-1`}
           type="radio"
           value={answerScore01}
-          name={`Question-${qitemNo}`}
+          name={`Question-${qitemNo}-1`}
           checked={answers[qitemNo] === answerScore01 ? true : false}
           onChange={handleChange}
         />{" "}
-        <label htmlFor="question-1">{answer01}</label>
+        <label htmlFor={`Question-${qitemNo}-1`}>{answer01}</label>
         <input
-          id="question-2"
+          id={`Question-${qitemNo}-2`}
           type="radio"
           value={answerScore02}
-          name={`Question-${qitemNo}`}
+          name={`Question-${qitemNo}-2`}
           checked={answers[qitemNo] === answerScore02 ? true : false}
           onChange={handleChange}
         />{" "}
-        <label htmlFor="question-2">{answer02}</label>
+        <label htmlFor={`Question-${qitemNo}-2`}>{answer02}</label>
       </div>
       {Hint()}
     </div>
