@@ -26,7 +26,7 @@ const Result = () => {
     // 종사자 평균 학력별 직업 정보 요청 (성공)
     const GetJobAPI = async () => {
         
-        const JobResponse = await axios.get(`https://inspct.career.go.kr/inspct/api/psycho/value/jobs?no1=${result.bestWonScoreIndex}&no2=${result.bestSecondWonScoreIndex}`);
+        const JobResponse = await axios.get(`https://inspct.career.go.kr/inspct/api/psycho/value/jobs?no1=${result.bestWonScoreIndex+1}&no2=${result.bestSecondWonScoreIndex+1}`);
         
         //console.log('JobResponse',JobResponse.data);
         dispatch(actionSetJob(JobResponse.data));
@@ -37,7 +37,7 @@ const Result = () => {
     // 종사자 평균 전공별 직업 정보 요청 (성공)
     const GetMajorAPI = async () => {
         
-        const majorResponse = await axios.get(`https://inspct.career.go.kr/inspct/api/psycho/value/majors?no1=${result.bestWonScoreIndex}&no2=${result.bestSecondWonScoreIndex}`);
+        const majorResponse = await axios.get(`https://inspct.career.go.kr/inspct/api/psycho/value/majors?no1=${result.bestWonScoreIndex+1}&no2=${result.bestSecondWonScoreIndex+1}`);
         
         //console.log('majorResponse',majorResponse.data);
         dispatch(actionSetMajor(majorResponse.data));

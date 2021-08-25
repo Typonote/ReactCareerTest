@@ -8,7 +8,9 @@ const ResultCard = () => {
     
     return (
         <>
-            <h3>가치관과 관련이 높은 직업</h3>
+        <div className='resultcard-title'>
+            <h2>가치관과 관련이 높은 직업</h2>
+        </div>
             <ResultLevelCard />
             <ResultMajorCard />
         </>

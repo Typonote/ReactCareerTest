@@ -11,6 +11,9 @@ const ResultGraph = () => {
 
     return (
         <>
+        <div className='resultgraph-title'>
+            <h2>직업가치관 결과</h2>
+        </div>
             <section id="tall">
                 <article className="tall">
 
