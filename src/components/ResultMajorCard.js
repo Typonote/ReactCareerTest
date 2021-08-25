@@ -106,42 +106,42 @@ const ResultMajorCard = () => {
         <table className='major-table'>
             <thead>
                 <tr>
-                    <th>분야</th>
+                    <th className="branch">분야</th>
                     <th>직업명</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>{affiliation[0]}</td>
-                    <td>{zeroMajor.join(', ')}</td>
+                    <td className="career">{zeroMajor.join(', ')}</td>
                 </tr>
                 <tr>
                     <td>{affiliation[1]}</td>
-                    <td>{oneMajor.join(', ')}</td>
+                    <td className="career">{oneMajor.join(', ')}</td>
                 </tr>
                 <tr>
                     <td>{affiliation[2]}</td>
-                    <td>{twoMajor.join(', ')}</td>
+                    <td className="career">{twoMajor.join(', ')}</td>
                 </tr>
                 <tr>
                     <td>{affiliation[3]}</td>
-                    <td>{threeMajor.join(', ')}</td>
+                    <td className="career">{threeMajor.join(', ')}</td>
                 </tr>
                 <tr>
                     <td>{affiliation[4]}</td>
-                    <td>{fourMajor.join(', ')}</td>
+                    <td className="career">{fourMajor.join(', ')}</td>
                 </tr>
                 <tr>
                     <td>{affiliation[5]}</td>
-                    <td>{fiveMajor.join(', ')}</td>
+                    <td className="career">{fiveMajor.join(', ')}</td>
                 </tr>
                 <tr>
                     <td>{affiliation[6]}</td>
-                    <td>{sixMajor.join(', ')}</td>
+                    <td className="career">{sixMajor.join(', ')}</td>
                 </tr>
                 <tr>
                     <td>{affiliation[0]}</td>
-                    <td>{sevenMajor.join(', ')}</td>
+                    <td className="career">{sevenMajor.join(', ')}</td>
                 </tr>
             </tbody>
         </table>

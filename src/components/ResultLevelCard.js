@@ -71,38 +71,38 @@ const ResultLevelCard = () => {
             <table className='level-table'>
                 <thead>
                     <tr>
-                        <th>분야</th>
-                        <th>직업명</th>
+                        <th className="branch">분야</th>
+                        <th >직업명</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>{level[0]}</td>
-                        <td>
+                        <td className="career">
                             {jungjol.join(', ')}
                         </td>
                     </tr>
                     <tr>
                         <td>{level[1]}</td>
-                        <td>
+                        <td className="career">
                             {kojol.join(', ')}
                         </td>
                     </tr>
                     <tr>
                         <td>{level[2]}</td>
-                        <td>
+                        <td className="career">
                             {jeonjol.join(', ')}
                         </td>
                     </tr>
                     <tr>
                         <td>{level[3]}</td>
-                        <td>
+                        <td className="career">
                             {daejol.join(', ')} 
                         </td>
                     </tr>
                     <tr>
                         <td>{level[4]}</td>
-                        <td>
+                        <td className="career">
                             {masterjol.join(', ')} 
                         </td>
                     </tr>
