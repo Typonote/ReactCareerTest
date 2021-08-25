@@ -23,7 +23,7 @@ const ResultGraph = () => {
                             <span 
                                 className="tall"
                                 style={{
-                                    width: `${wonScore[0]}*10%`,
+                                    width: `${wonScore[0]*10}%`,
                             }}>{wonScore[0]}</span>
                         </p>
                     </div>
@@ -31,35 +31,55 @@ const ResultGraph = () => {
                     <div>
                         <p>자율성
                             <span></span>
-                            <span className="tall">{wonScore[1]}</span>
+                            <span 
+                                className="tall"
+                                style={{
+                                    width: `${wonScore[1]*10}%`,
+                            }}>{wonScore[1]}</span>
                         </p>
                     </div>
 
                     <div>
                         <p>보수
                             <span></span>
-                            <span className="tall">{wonScore[2]}</span>
+                            <span 
+                                className="tall"
+                                style={{
+                                    width: `${wonScore[2]*10}%`,
+                            }}>{wonScore[2]}</span>
                         </p>
                     </div>
 
                     <div>
                         <p>안정성
                             <span></span>
-                            <span className="tall" >{wonScore[3]}</span>
+                            <span 
+                                className="tall"
+                                style={{
+                                    width: `${wonScore[3]*10}%`,
+                            }}>{wonScore[3]}</span>
                         </p>
                     </div>
 
                     <div>
                         <p>사회적 인정
                             <span></span>
-                            <span className="tall">{wonScore[4]}</span>
+                            <span 
+                                className="tall"
+                                style={{
+                                    width: `${wonScore[4]*10}%`,
+                            }}>{wonScore[4]}</span>
                         </p>
                     </div>
 
                     <div>
                         <p>사회봉사
                             <span></span>
-                            <span className="tall">{wonScore[5]}</span>
+                            <span 
+                                className="tall"
+                                style={{
+                                    width: `${wonScore[5]*10}%`,
+                            }}>{wonScore[5]}</span>
                         </p>
                     </div>
 

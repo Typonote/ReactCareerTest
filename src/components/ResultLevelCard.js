@@ -15,6 +15,8 @@ const ResultLevelCard = () => {
     //     1: "운동선수"
     //     2: 2
 
+    // 질문 0825-3 : 구현은 하였으나 코드가 좋지 않습니다.
+
     const masterjol =[];
     for(let i =0; i < job.length; i++) {
         if(job[1]!==0){ // 값이 있는 경우 
@@ -60,7 +62,6 @@ const ResultLevelCard = () => {
         }
     };
 
-    // console.log('kojol', kojol )
     
     return (
         <>

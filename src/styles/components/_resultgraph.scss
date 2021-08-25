@@ -39,6 +39,9 @@ section .tall div span:nth-child(2){
     left: 0;
     margin: auto;
     background-color: #e94560;
+    text-align: right;
+    line-height: 3rem;
+    font-size: 1rem;
     z-index: -1;
 }
 
@@ -54,4 +57,4 @@ section .tall div span:nth-child(2){
     }
 }
 
-// width: wonScore !== 0 ? `(${wonScore[0]}*10)%`:"0%",
+// 질문0825-2

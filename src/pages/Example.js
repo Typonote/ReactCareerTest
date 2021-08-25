@@ -12,7 +12,7 @@ const Example = () => {
   const sample = useSelector((state) => state.question[0]);
   const answer = useSelector((state) => state.answers[0]);
 
-  // 0821 질문 2)
+  
   const Failalert = () => {
     if (answer === "Null") {
       return toast("다시 한 번 문항을 확인하세요", {
