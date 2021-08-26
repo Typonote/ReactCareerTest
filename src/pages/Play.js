@@ -102,7 +102,6 @@ const Play = ({ page }) => {
         <div>
             <Helmet><title>직업가치관검사 - 검사</title></Helmet>
             <div className="progress-container"> 
-                <p>{page} of 6</p>
                 <MyProgressBar Percentage={page*13+12}></MyProgressBar>
             </div>
             
@@ -128,10 +127,12 @@ const Play = ({ page }) => {
                     <button>이전</button>
                 </Link>
 
-                <Link to="/" className="question-home">
+                {/* <Link to="/" className="question-home">
                     <button>홈으로</button>
-                </Link>
+                </Link> */}
                 
+                <p>{page} of 6</p>
+
                 <button
                     className="question-next"
                     style={{

@@ -33,7 +33,7 @@ const QuestionCard = ({
 
   return (
     <div className="question-card">
-      <h3># {qitemNo}</h3>
+      <h3>{qitemNo}번</h3>
       <h5>{question}</h5>
       
       <div className="option-container">

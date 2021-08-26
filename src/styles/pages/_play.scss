@@ -2,10 +2,6 @@
     width: 86%;
     margin: 0.5rem auto 0 auto;
     
-    p{
-        font-family: 'Black Han Sans', sans-serif;
-        font-size: 1rem;
-    }
 
     h4{
         font-family: 'Montserrat', sans-serif;
@@ -24,14 +20,20 @@
     margin: 0 auto 0 auto;
     padding: 2rem;
     width: 80%;
+
+    p{
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 1.3rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
     a{
         border: none;
         color: #f8f8f8;
         cursor: pointer;
         font-family: 'Black Han Sans', sans-serif;
-        margin-right: auto;
-        padding: 0.5rem 1.5rem;
     }
 
     a:link {
