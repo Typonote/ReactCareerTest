@@ -102,7 +102,7 @@ const Play = ({ page }) => {
         <div>
             <Helmet><title>직업가치관검사 - 검사</title></Helmet>
             <div className="progress-container"> 
-                <MyProgressBar Percentage={page*13+12}></MyProgressBar>
+                <MyProgressBar Percentage={page*16}></MyProgressBar>
             </div>
             
             <div className="question-container">
@@ -126,10 +126,6 @@ const Play = ({ page }) => {
                 <Link to={page === '1' ? '/example' : `/Play/${Number(page) - 1 }`} className="question-prev">
                     <button>이전</button>
                 </Link>
-
-                {/* <Link to="/" className="question-home">
-                    <button>홈으로</button>
-                </Link> */}
                 
                 <p>{page} of 6</p>
 

@@ -31,7 +31,7 @@ const Example = () => {
       </Helmet>
 
       <div className="MyProgressBar">
-        <MyProgressBar Percentage={12}></MyProgressBar>
+        <MyProgressBar Percentage={0}></MyProgressBar>
       </div>
 
       <div className="example-container">

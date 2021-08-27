@@ -1,23 +1,24 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+// const getJobsByAffiliationNumber = (major, affiliationNumber) => {
+//     const arr = [];
+//     for (let i = 0; i < major.length; i++) {
+//         if (major[i][2] === affiliationNumber) {
+//         arr.push(major[i][1]);
+//         } 
+//     }
+//     return arr;
+// };
+
 const ResultMajorCard = () => {
     
     const major = useSelector((state) => state).major;
 
     console.log('major',major);
 
-
     const affiliation = ["계열무관",  "인문", "사회", "교육", "공학","자연","의학","예체능"]
     
-    // major는 현재 2차원 배열!
-    // 0: Array(3)
-    //     0: 407
-    //     1: "직업군인"
-    //     2: 0
-
-
-    // 질문 0825-3 : 구현은 하였으나 코드가 좋지 않습니다.
 
     const zeroMajor =[];
     for(let i =0; i < major.length; i++) {
@@ -92,12 +93,6 @@ const ResultMajorCard = () => {
     };
 
 
-
-
-
-
-
-
     return (
         <>
         <div className='title'> 
@@ -140,7 +135,7 @@ const ResultMajorCard = () => {
                     <td className="career">{sixMajor.join(', ')}</td>
                 </tr>
                 <tr>
-                    <td>{affiliation[0]}</td>
+                    <td>{affiliation[7]}</td>
                     <td className="career">{sevenMajor.join(', ')}</td>
                 </tr>
             </tbody>

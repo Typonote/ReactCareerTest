@@ -11,7 +11,7 @@ const MyProgressBar = ({Percentage}) => {
 		}
 		
 		setStyle(newStyle);
-	}, 200);
+	}, 500);
 
     return(
     <div className="component-progress-container">
