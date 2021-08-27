@@ -11,14 +11,11 @@ export const GetQuestionAPI = async () => {
     return response.data.RESULT;
 };
 
-// 결과 보내고 받아옴 => 나의 답변을 보내야함.
-// 예시) pushResponse는 "https://www.career.go.kr/inspct/web/psycho/value/report?seq=NTQ5ODc4NTA" 이렇게 옴.
-
 export const PostResultAPI = async (data) => { 
     const pushResponse = await axios.post(`${Q_URL}/report?apikey=${API_KEY}&q=${Q_NUM}` , data);
     const SEQ_NUM = pushResponse.data.RESULT.url.split('=')[1];
     const pullResponse = await axios.get(`${R_URL}/report?seq=${SEQ_NUM}`);
-    // console.log("pullResponse", pullResponse);
+    
     return pullResponse;
 };
 

@@ -6,62 +6,22 @@ const ResultLevelCard = () => {
     const job = useSelector((state) => state).job;
 
     const level = ["중졸",  "고졸", "전문대졸", "대졸", "대학원졸"]
-    console.log('job',job);
 
-    // job은 현재 2차원 배열!
-
-    // 0: Array(3)
-    //     0: 336
-    //     1: "운동선수"
-    //     2: 2
-
-    // 질문 0825-3 : 구현은 하였으나 코드가 좋지 않습니다.
-
-    const masterjol =[];
-    for(let i =0; i < job.length; i++) {
-        if(job[1]!==0){ // 값이 있는 경우 
-            if(job[i][2] == 5){
-                masterjol.push(job[i][1])
-            }
+    const getLevelByAffiliationNumber = (job, levelNumber) => {  
+        const arr = [];
+        for (let i = 0; i < job.length; i++) {
+            if (job[i][2] === levelNumber+1) {
+            arr.push(job[i][1]);
+            } 
         }
-    };
-    
-    const daejol =[];
-    for(let i =0; i < job.length; i++) {
-        if(job[1]!==0){ // 값이 있는 경우 
-            if(job[i][2] == 4){
-                daejol.push(job[i][1])
-            }
-        }
-    };
-    
-    const jeonjol =[];
-    for(let i =0; i < job.length; i++) {
-        if(job[1]!==0){ // 값이 있는 경우 
-            if(job[i][2] == 3){
-                jeonjol.push(job[i][1])
-            }
-        }
+        return arr;
     };
 
-    const kojol =[];
-    for(let i =0; i < job.length; i++) {
-        if(job[1]!==0){ // 값이 있는 경우 
-            if(job[i][2] == 2){
-                kojol.push(job[i][1])
-            }
-        }
-    };
-    
-    const jungjol =[];
-    for(let i =0; i < job.length; i++) {
-        if(job[1]!==0){ // 값이 있는 경우 
-            if(job[i][2] == 1){
-                jungjol.push(job[i][1])
-            }
-        }
-    };
+    const levels = []
 
+    for (let i = 0; i < level.length; i++){
+        levels.push(getLevelByAffiliationNumber(job,i))
+    }
     
     return (
         <>
@@ -76,36 +36,12 @@ const ResultLevelCard = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>{level[0]}</td>
-                        <td className="career">
-                            {jungjol.join(', ')}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{level[1]}</td>
-                        <td className="career">
-                            {kojol.join(', ')}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{level[2]}</td>
-                        <td className="career">
-                            {jeonjol.join(', ')}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{level[3]}</td>
-                        <td className="career">
-                            {daejol.join(', ')} 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{level[4]}</td>
-                        <td className="career">
-                            {masterjol.join(', ')} 
-                        </td>
-                    </tr>
+                    {levels.map((job, index)=>(
+                        <tr>
+                            <td>{level[index]}</td>
+                            <td className="career">{job.join(', ')}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </>
