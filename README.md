@@ -70,7 +70,7 @@ src
 
 ## 📄 서비스 예시
 
-![Hnet com-image](https://user-images.githubusercontent.com/81430564/132158685-3056d9d6-3621-41b5-a3d4-692b91295715.gif)
+![Hnet-image](https://user-images.githubusercontent.com/81430564/132160450-ccda181b-d85e-45a2-9ae2-0c8dbc4515bb.gif)
 
 ## ⚙️ 주요 기능
 
