@@ -36,7 +36,9 @@ const Complete  = () => {
     useEffect(() => {
         const request = async () => {
             const response = await PostResultAPI(postDictionatry);             // 받은 결과 1=3 2=4 3=3 4=4 5=4 6=3 7=3 8=4 
-            const wonScore = response.data.result.wonScore.split(' ').splice(0, 8).map((answer) => Number(answer.split('=')[1]));      // 출력결과: wonScore  [3, 4, 3, 4, 4, 3, 3, 4]
+            
+            const wonScore = response.data.result.wonScore.split(' ').splice(0, 8).map((answer) => Number(answer.split('=')[1]));      
+            // 출력결과: wonScore  [3, 4, 3, 4, 4, 3, 3, 4]
             
             const Ability = ['능력발휘', '자율성', '보수', '안정성', '사회적 인정', '사회봉사', '자기계발', '창의성'];
 
