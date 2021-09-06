@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# 직업심리검사 서비스 구현
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+커리어넷에서 제공하는 직업심리검사 API를 이용하여 사용자의 직업 적합도를 테스트 할 수 있는 WEB SERVICE입니다.
 
-## Available Scripts
+## 💻 기술 스택
 
-In the project directory, you can run:
+- HTML5
+- CSS3 & SCSS
+- JavaScript
+- React
+- Git
 
-### `yarn start`
+## 🌲 디렉토리 구조
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+src
+├── api
+│   └── OpenAPI.js
+│ 
+├── assets
+│   └── background.jpg
+│ 
+├── component
+│   ├── DisplayAbility.js
+│   ├── GenderChoice.js
+│   ├── MyProgressBar.js
+│   ├── NowDate.js
+│   ├── QuestionCard.js
+│   ├── ResultCard.js
+│   ├── ResultGraph.js
+│   ├── ResultLevelCard.js
+│   └── ResultMajorCard.js
+│ 
+├── pages
+│   ├── Complete.js
+│   ├── Example.js
+│   ├── Home.js
+│   ├── Play.js
+│   ├── Result.js
+│   └── SetPage.js
+│ 
+├── redux
+│   ├── action.js
+│   ├── reducer.js
+│   └── store.js
+│ 
+├── styles
+│   ├── components
+│   │            ├── _displayability.scss
+│   │            ├── _genderchoice.scss
+│   │            ├── _myprogressbar.scss
+│   │            ├── _questioncard.scss
+│   │            ├── _resultcard.scss
+│   │            ├── _resultgraph.scss
+│   │            ├── _resultlevelcard.scss
+│   │            └── _resultmajorcard.scss
+│   ├── pages
+│   │            ├── _complete.scss
+│   │            ├── _exmaple.scss
+│   │            ├── _home.scss
+│   │            ├── _play.scss
+│   │            └── _result.scss
+│   └── styles.scss
+│ 
+├── App.css
+├── App.js
+├── index.css
+└── index.js
+``` 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📄 서비스 예시
 
-### `yarn test`
+![Hnet com-image](https://user-images.githubusercontent.com/81430564/132158685-3056d9d6-3621-41b5-a3d4-692b91295715.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️ 주요 기능
 
-### `yarn build`
+- 그래프와 표를 활용해 데이터를 쉽게 확인할 수 있도록 구현
+- 문항을 다 선택한 후 넘어가도록 버튼 효과 구현
+- 문항 페이지를 넘길 때마다 진행도 확인 기능 구현
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✨ 실행 방법
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. api key를 신청해주세요.
+> API 폴더 안 OpenAPI.js에 넣어주세요!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. 기본 설치
+```
+yarn install
+```
+3. 바로 시작 🚀
+```
+yarn start
+```
